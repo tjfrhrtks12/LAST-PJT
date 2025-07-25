@@ -1,0 +1,219 @@
+.sidebar {
+  background: #2c3e50;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 44px; /* 네비게이션바 높이만큼 아래로 이동 */
+  left: 0;
+  transition: width 0.2s cubic-bezier(0.4,0,0.2,1);
+  min-width: 0;
+  overflow: hidden;
+  z-index: 30;
+  height: calc(100vh - 44px); /* 네비게이션바 높이를 제외한 전체 높이 */
+}
+
+.sub-sidebar {
+  background: #34495e;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 44px; /* 네비게이션바 높이만큼 아래로 이동 */
+  left: 48px; /* 메인 사이드바 축소 상태의 옆에 고정 */
+  width: 110px;
+  min-width: 0;
+  overflow: hidden;
+  z-index: 10;
+  border-left: 1px solid #2c3e50;
+  height: calc(100vh - 44px); /* 네비게이션바 높이를 제외한 전체 높이 */
+}
+
+.sidebar-header {
+  padding: 16px 0;
+  text-align: center;
+  border-bottom: 1px solid #34495e;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-logo {
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.menu-item {
+  padding: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  margin: 0;
+}
+
+/* 사이드바가 축소되었을 때도 왼쪽 정렬 유지 */
+.sidebar:not(:hover) .menu-item {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.menu-item:hover {
+  background: #3b5875;
+}
+
+.menu-item.active {
+  background: #3b5875;
+  border-left-color: #3498db;
+}
+
+/* 새로운 서브사이드바 스타일 */
+.submenu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #34495e;
+  transition: all 0.2s;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-item {
+  padding: 0;
+  margin: 0;
+  background: #34495e;
+}
+
+.submenu-header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  background: #34495e;
+  margin: 0;
+}
+
+.submenu-header:hover {
+  background: #3b5875;
+}
+
+.submenu-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.submenu-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #3b5875;
+  transition: all 0.2s;
+}
+
+.submenu-subitem {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #ecf0f1;
+  cursor: pointer;
+  padding-left: 20px;
+  border-left: 2px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+  background: #3b5875;
+  margin: 0;
+}
+
+.submenu-subitem:hover {
+  background: #466b8a;
+  border-left: 2px solid #3498db;
+}
+
+.submenu-sublabel {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.submenu-item-single {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  background: #34495e;
+  margin: 0;
+}
+
+.submenu-item-single:hover {
+  background: #3b5875;
+}
+
+.sidebar-footer {
+  padding: 12px 0;
+  text-align: center;
+  border-top: 1px solid #34495e;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  width: 80%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logout-button:hover {
+  background: #c0392b;
+}

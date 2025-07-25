@@ -1,0 +1,2208 @@
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 44px; /* Navigation bar height */
+  left: 158px; /* Sub-sidebar position (48px) + Sub-sidebar size (110px) */
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: #f8fafc;
+  padding: 16px; /* 패딩 추가하여 사이드바와 간격 확보 */
+}
+
+.content-header {
+  background: white;
+  padding: 20px 24px; /* 패딩 확대 */
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 12px 12px 0 0; /* 상단 둥근 모서리 */
+  margin-bottom: 16px; /* 하단 마진 추가 */
+}
+
+.content-header h1 {
+  margin: 0;
+  font-size: 24px; /* 폰트 크기 확대 */
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.content-header h2 {
+  margin: 8px 0 0 0; /* 마진 확대 */
+  font-size: 18px; /* 폰트 크기 확대 */
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.content-body {
+  flex: 1;
+  padding: 24px; /* 패딩 확대 */
+  overflow-y: auto;
+}
+
+.welcome-section {
+  text-align: center;
+  padding: 60px 20px; /* 패딩 확대 */
+}
+
+.welcome-section h2 {
+  font-size: 32px; /* 폰트 크기 확대 */
+  color: #2c3e50;
+  margin-bottom: 16px; /* 마진 확대 */
+}
+
+.welcome-section p {
+  font-size: 18px; /* 폰트 크기 확대 */
+  color: #6c757d;
+  margin-bottom: 32px; /* 마진 확대 */
+}
+
+.ai-chatbot-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px; /* 패딩 확대 */
+  border-radius: 12px; /* 둥근 모서리 확대 */
+  font-size: 18px; /* 폰트 크기 확대 */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.ai-chatbot-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* 학생 관리 컨테이너 */
+.student-management-container {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  overflow: hidden;
+}
+
+/* 학생 목록 섹션 */
+.student-list-section {
+  width: 380px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-left: 180px; /* 서브사이드바와의 간격 확보 */
+  margin-top: 70px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 20px 16px 20px; /* 패딩 확대 */
+  border-bottom: 1px solid #e9ecef;
+  background: #ffffff;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 20px; /* 폰트 크기 확대 */
+  font-weight: 700;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 간격 확대 */
+}
+
+.student-count {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px; /* 패딩 확대 */
+  border-radius: 20px; /* 둥근 모서리 확대 */
+  font-size: 12px; /* 폰트 크기 확대 */
+  font-weight: 600;
+}
+
+.selected-student-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.student-class {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ai-chatbot-button-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  flex-shrink: 0;
+}
+
+.ai-chatbot-button-header:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tai-text {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.student-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px; /* 패딩 확대 */
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* 간격 확대 */
+  padding: 16px; /* 패딩 확대 */
+  margin-bottom: 8px; /* 마진 확대 */
+  background: #ffffff;
+  border-radius: 12px; /* 둥근 모서리 확대 */
+  border: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.student-item:hover {
+  transform: translateY(-2px); /* 이동 거리 확대 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 그림자 확대 */
+  border-color: #667eea;
+}
+
+.student-item.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3); /* 그림자 확대 */
+}
+
+.student-avatar {
+  width: 40px; /* 크기 확대 */
+  height: 40px; /* 크기 확대 */
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.student-item.selected .student-avatar {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.avatar-text {
+  color: white;
+  font-weight: 700;
+  font-size: 16px; /* 폰트 크기 확대 */
+}
+
+.avatar-text.large {
+  font-size: 24px; /* 폰트 크기 확대 */
+}
+
+.student-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-name {
+  font-size: 16px; /* 폰트 크기 확대 */
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px; /* 마진 확대 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-item.selected .student-name {
+  color: white;
+}
+
+.student-details {
+  display: flex;
+  gap: 8px; /* 간격 확대 */
+  font-size: 12px; /* 폰트 크기 확대 */
+  color: #6c757d;
+}
+
+.student-item.selected .student-details {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.student-number {
+  background: #e9ecef;
+  padding: 2px 6px; /* 패딩 확대 */
+  border-radius: 8px; /* 둥근 모서리 확대 */
+  font-weight: 600;
+}
+
+.student-item.selected .student-number {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.student-gender {
+  background: #f8f9fa;
+  padding: 2px 6px; /* 패딩 확대 */
+  border-radius: 8px; /* 둥근 모서리 확대 */
+  font-weight: 500;
+}
+
+.student-item.selected .student-gender {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.student-id {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.student-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  width: 8px; /* 크기 확대 */
+  height: 8px; /* 크기 확대 */
+  border-radius: 50%;
+  background: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2); /* 그림자 확대 */
+}
+
+/* 학생 상세 정보 섹션 */
+.student-detail-section {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-top: 70px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 학생 상세 정보 */
+.student-detail {
+  flex: 1;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.detail-header {
+  margin-bottom: 40px; /* 마진 확대 */
+  padding-bottom: 32px; /* 패딩 확대 */
+  border-bottom: 2px solid #e9ecef;
+}
+
+.student-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* 간격 확대 */
+}
+
+.profile-avatar {
+  width: 100px; /* 크기 확대 */
+  height: 100px; /* 크기 확대 */
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); /* 그림자 확대 */
+  flex-shrink: 0; /* 크기 고정 */
+}
+
+.profile-info h3 {
+  margin: 0 0 12px 0; /* 마진 확대 */
+  font-size: 36px; /* 폰트 크기 확대 */
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 18px; /* 폰트 크기 확대 */
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* 탭 네비게이션 */
+.tab-navigation {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  border-radius: 12px 12px 0 0;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.tab-button.active {
+  background: #667eea;
+  color: white;
+  border-bottom-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* 탭 콘텐츠 */
+.tab-content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  overflow-y: auto; /* 세로 스크롤만 활성화 */
+  overflow-x: hidden; /* 가로 스크롤 비활성화 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 인적사항 콘텐츠 */
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  min-width: 0; /* 최소 너비 제한 */
+  min-height: 0;
+  overflow-y: auto; /* 세로 스크롤만 활성화 */
+  overflow-x: hidden; /* 가로 스크롤 비활성화 */
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+.detail-section {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  min-width: 0; /* 최소 너비 제한 */
+  flex-shrink: 0;
+  overflow-x: hidden; /* 가로 스크롤 비활성화 */
+}
+
+.detail-section h4 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #667eea;
+  width: 100%;
+  min-width: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 최소 너비 줄임 */
+  gap: 16px;
+  width: 100%;
+  min-width: 0; /* 최소 너비 제한 */
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+  min-height: 60px;
+  width: 100%;
+  min-width: 0; /* 최소 너비 제한 */
+  overflow: hidden; /* 내용 넘침 방지 */
+}
+
+.detail-item:hover {
+  background: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.detail-item .label {
+  min-width: 100px; /* 최소 너비 줄임 */
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.detail-item .value {
+  flex: 1;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+  min-width: 0; /* 최소 너비 제한 */
+  overflow-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+}
+
+.detail-item.full-width .value {
+  width: 100%;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 60px;
+  word-break: break-all;
+  min-width: 0; /* 최소 너비 제한 */
+  overflow-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+}
+
+.detail-item .value.address {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.detail-item .value.memo {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1600px) {
+  .detail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .subjects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1400px) {
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .semester-section {
+    padding: 24px;
+  }
+  
+  .exam-section {
+    padding: 24px;
+  }
+  
+  .grades-summary {
+    padding: 28px;
+  }
+  
+  .average-score {
+    font-size: 48px;
+  }
+  
+  .detail-section {
+    padding: 20px;
+  }
+  
+  .detail-item {
+    padding: 14px 16px;
+    min-height: 50px;
+  }
+  
+  .detail-item.full-width .value {
+    padding: 10px 14px;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-management-container {
+    flex-direction: column;
+  }
+  
+  .student-list-section {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  
+  .student-detail-section {
+    margin-right: 0;
+    margin-top: 20px;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-section {
+    padding: 16px;
+  }
+  
+  .detail-item {
+    padding: 12px 14px;
+    min-height: 45px;
+  }
+  
+  .detail-item .label {
+    min-width: 100px;
+    font-size: 13px;
+  }
+  
+  .detail-item .value {
+    font-size: 13px;
+  }
+  
+  .detail-item.full-width .value {
+    padding: 8px 12px;
+    min-height: 45px;
+    font-size: 13px;
+  }
+  
+  .tab-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .average-score {
+    font-size: 40px;
+  }
+  
+  .semester-section {
+    padding: 20px;
+  }
+  
+  .exam-section {
+    padding: 20px;
+  }
+  
+  .grades-summary {
+    padding: 24px;
+  }
+  
+  .subject-score {
+    padding: 14px 16px;
+    min-height: 50px;
+  }
+  
+  .score {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}
+
+/* 반응형 그리드 개선 */
+@media (min-width: 1400px) {
+  .detail-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+  }
+}
+
+@media (max-width: 1199px) {
+  .detail-grid {
+    grid-template-columns: 1fr; /* 1열 그리드 */
+  }
+} 
+
+/* 성적 콘텐츠 */
+.grades-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.grades-summary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 28px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.overall-average h4 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.average-score {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 학기 섹션 */
+.semester-section {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.semester-section h4 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #667eea;
+}
+
+.exams-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열 고정 그리드 */
+  gap: 32px; /* 간격을 32px로 확대하여 겹침 방지 */
+  width: 100%;
+}
+
+.exam-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px; /* 패딩을 24px로 확대 */
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* 마진 제거 */
+}
+
+.exam-section h5 {
+  margin: 0 0 20px 0; /* 하단 마진 확대 */
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  padding-bottom: 12px; /* 패딩 확대 */
+  border-bottom: 1px solid #e9ecef;
+  text-align: center;
+  width: 100%;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1열로 과목 배치 */
+  gap: 16px; /* 과목 간 간격 확대 */
+  width: 100%;
+  flex: 1;
+}
+
+.subject-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px; /* 패딩 확대 */
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+  min-height: 55px; /* 높이 확대 */
+  width: 100%;
+  margin: 0; /* 마진 제거 */
+}
+
+.subject-score:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subject-name {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  flex: 1;
+  margin-right: 12px; /* 오른쪽 마진 추가 */
+}
+
+.score {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 12px; /* 패딩 확대 */
+  border-radius: 6px;
+  min-width: 55px; /* 최소 너비 확대 */
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.score.excellent {
+  background: #d4edda;
+  color: #155724;
+  box-shadow: 0 1px 3px rgba(21, 87, 36, 0.2);
+}
+
+.score.good {
+  background: #d1ecf1;
+  color: #0c5460;
+  box-shadow: 0 1px 3px rgba(12, 84, 96, 0.2);
+}
+
+.score.average {
+  background: #fff3cd;
+  color: #856404;
+  box-shadow: 0 1px 3px rgba(133, 100, 4, 0.2);
+}
+
+.score.poor {
+  background: #f8d7da;
+  color: #721c24;
+  box-shadow: 0 1px 3px rgba(114, 28, 36, 0.2);
+}
+
+.exam-average {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px; /* 패딩 확대 */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+  margin-top: 16px; /* 상단 마진 확대 */
+  min-height: 55px; /* 높이 확대 */
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  width: 100%;
+}
+
+.average-label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.average-value {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1400px) {
+  .exams-container {
+    grid-template-columns: repeat(2, 1fr); /* 2열 유지 */
+    gap: 28px; /* 간격 조정 */
+  }
+}
+
+@media (max-width: 1200px) {
+  .exams-container {
+    grid-template-columns: repeat(2, 1fr); /* 2열 유지 */
+    gap: 24px; /* 간격 조정 */
+  }
+  
+  .semester-section {
+    padding: 20px;
+  }
+  
+  .exam-section {
+    padding: 20px; /* 패딩 조정 */
+  }
+  
+  .grades-summary {
+    padding: 24px;
+  }
+  
+  .average-score {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exams-container {
+    grid-template-columns: 1fr; /* 모바일에서는 1열 */
+    gap: 20px; /* 간격 조정 */
+  }
+  
+  .semester-section {
+    padding: 16px;
+  }
+  
+  .exam-section {
+    padding: 16px; /* 패딩 조정 */
+  }
+  
+  .grades-summary {
+    padding: 20px;
+  }
+  
+  .average-score {
+    font-size: 36px;
+  }
+  
+  .subject-score {
+    padding: 12px 14px; /* 패딩 조정 */
+    min-height: 50px;
+  }
+  
+  .score {
+    font-size: 14px;
+    padding: 6px 10px; /* 패딩 조정 */
+  }
+}
+
+/* 출결 콘텐츠 */
+.attendance-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.attendance-summary {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.overall-attendance h4 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.attendance-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+/* 학기별 출결 섹션 */
+.semester-attendance-section {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.semester-attendance-section h4 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #28a745;
+}
+
+/* 출결 테이블 */
+.attendance-table {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+}
+
+.attendance-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.attendance-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.attendance-row:last-child {
+  border-bottom: none;
+}
+
+.attendance-row:hover {
+  background: #f8f9fa;
+}
+
+.attendance-cell {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.attendance-cell.header {
+  font-weight: 600;
+  color: #2c3e50;
+  background: #e9ecef;
+}
+
+.attendance-cell.count {
+  font-weight: 700;
+  color: #28a745;
+  justify-content: center;
+}
+
+.attendance-cell.percentage {
+  font-weight: 600;
+  color: #6c757d;
+  justify-content: center;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .attendance-stats {
+    gap: 24px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+  
+  .semester-attendance-section {
+    padding: 20px;
+  }
+  
+  .attendance-cell {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .semester-attendance-section {
+    padding: 16px;
+  }
+  
+  .attendance-header,
+  .attendance-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .attendance-cell {
+    padding: 12px 14px;
+    font-size: 12px;
+    justify-content: center;
+  }
+  
+  .attendance-cell.header {
+    font-weight: 600;
+    background: #e9ecef;
+  }
+} 
+
+/* 시간표 콘텐츠 */
+.timetable-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+  padding-left: 170px;
+  padding-top: 70px;
+  min-width: 0;
+  flex: 1;
+  background: #f8f9fa;
+}
+
+.timetable-header {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.timetable-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.timetable-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.timetable-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.semester-info {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c757d;
+  padding: 6px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+/* 시간표 컨테이너 */
+.timetable-container {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+  margin-right: 20px;
+  max-height: calc(100vh - 200px);
+}
+
+/* 시간표 그리드 */
+.timetable-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  gap: 0;
+  width: 100%;
+  min-height: 600px;
+}
+
+/* 시간표 셀 */
+.timetable-cell {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  border-right: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  min-height: 70px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.timetable-cell:last-child {
+  border-right: none;
+}
+
+/* 헤더 셀 */
+.timetable-cell.header {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  min-height: 50px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* 교시 셀 */
+.timetable-cell.period {
+  background: #f8f9fa;
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 12px;
+  line-height: 1.3;
+  border-right: 1px solid #dee2e6;
+}
+
+/* 과목별 색상 - 부드러운 파스텔 톤 */
+.timetable-cell.subject {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  margin: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.timetable-cell.subject:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.timetable-cell.subject.korean {
+  background: #fff5f5;
+  color: #c53030;
+  border-color: #fed7d7;
+}
+
+.timetable-cell.subject.math {
+  background: #f0f8ff;
+  color: #2b6cb0;
+  border-color: #bee3f8;
+}
+
+.timetable-cell.subject.english {
+  background: #fffbeb;
+  color: #d69e2e;
+  border-color: #fef5e7;
+}
+
+.timetable-cell.subject.science {
+  background: #f0fff4;
+  color: #2f855a;
+  border-color: #c6f6d5;
+}
+
+.timetable-cell.subject.social {
+  background: #faf5ff;
+  color: #6b46c1;
+  border-color: #e9d8fd;
+}
+
+.timetable-cell.subject.music {
+  background: #fff5f7;
+  color: #be185d;
+  border-color: #fbb6ce;
+}
+
+.timetable-cell.subject.art {
+  background: #fffbeb;
+  color: #d97706;
+  border-color: #fed7aa;
+}
+
+.timetable-cell.subject.pe {
+  background: #f0fff4;
+  color: #059669;
+  border-color: #a7f3d0;
+}
+
+.timetable-cell.subject.computer {
+  background: #f7fafc;
+  color: #4a5568;
+  border-color: #e2e8f0;
+}
+
+/* 점심시간 */
+.timetable-cell.lunch {
+  background: #fffbeb;
+  color: #d69e2e;
+  font-weight: 500;
+  font-size: 14px;
+  grid-column: span 5;
+  border-color: #fef5e7;
+}
+
+/* 교사명 */
+.timetable-cell .teacher {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 3px;
+  font-weight: 400;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .timetable-grid {
+    grid-template-columns: 90px repeat(5, 1fr);
+  }
+  
+  .timetable-cell {
+    padding: 10px 6px;
+    font-size: 12px;
+    min-height: 65px;
+  }
+  
+  .timetable-cell.header {
+    font-size: 13px;
+    min-height: 45px;
+  }
+  
+  .timetable-cell.period {
+    font-size: 11px;
+  }
+  
+  .timetable-cell .teacher {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timetable-content {
+    padding: 16px;
+  }
+  
+  .timetable-header {
+    padding: 16px;
+  }
+  
+  .timetable-header h3 {
+    font-size: 18px;
+  }
+  
+  .semester-info {
+    font-size: 12px;
+  }
+  
+  .timetable-grid {
+    grid-template-columns: 70px repeat(5, 1fr);
+  }
+  
+  .timetable-cell {
+    padding: 6px 4px;
+    font-size: 11px;
+    min-height: 55px;
+  }
+  
+  .timetable-cell.header {
+    font-size: 11px;
+    min-height: 35px;
+  }
+  
+  .timetable-cell.period {
+    font-size: 10px;
+  }
+  
+  .timetable-cell .teacher {
+    font-size: 8px;
+  }
+  
+  .timetable-cell.lunch {
+    font-size: 12px;
+  }
+}
+
+/* 1학년 종합 페이지 */
+.grade-overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+  padding-left: 170px;
+  padding-top: 70px;
+  background: #f8f9fa;
+  min-width: 0;
+  flex: 1;
+}
+
+.grade-overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-right: 20px;
+}
+
+.grade-overview-header .welcome-section h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grade-overview-header .welcome-section p {
+  margin: 0;
+  font-size: 16px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.grade-info {
+  text-align: right;
+}
+
+.grade-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 1학년 통계 카드 */
+.grade-overview-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-right: 20px;
+}
+
+/* 1학년 콘텐츠 메인 */
+.grade-overview-content-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-right: 20px;
+}
+
+.grade-overview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.grade-overview-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 반별 현황 */
+.class-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.class-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.class-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.class-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.class-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.class-status.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.class-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.class-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.class-stat .stat-label {
+  font-size: 12px;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.class-stat .stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.class-progress {
+  border-top: 1px solid #e9ecef;
+  padding-top: 16px;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-item span:first-child {
+  font-size: 13px;
+  color: #6c757d;
+  min-width: 80px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-item span:last-child {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* 1학년 알림사항 */
+.grade-notifications {
+  padding: 20px;
+}
+
+/* 과목별 성적 현황 */
+.subject-stats {
+  padding: 20px;
+}
+
+.subject-stat {
+  margin-bottom: 16px;
+}
+
+.subject-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.subject-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.subject-score {
+  font-size: 14px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.subject-bar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.subject-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* 빠른 액션 */
+.quick-actions {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-item:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.action-icon {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: white;
+}
+
+.action-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .grade-overview-content-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .grade-overview-stats {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .class-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grade-overview-content {
+    padding: 16px;
+    padding-left: 20px;
+    padding-top: 60px;
+  }
+  
+  .grade-overview-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .grade-overview-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .class-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 학교 정보 페이지 스타일 */
+.school-info {
+  text-align: right;
+}
+
+.school-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.school-introduction {
+  padding: 20px;
+}
+
+.intro-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.intro-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.intro-section p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.intro-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.intro-section li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.intro-section strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.school-details {
+  padding: 20px;
+}
+
+.school-details .detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.detail-icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.detail-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.detail-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.school-stats-detail {
+  padding: 20px;
+}
+
+.stat-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-detail-item span:first-child {
+  font-size: 13px;
+  color: #6c757d;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.stat-detail-item .stat-bar {
+  flex: 1;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat-detail-item .stat-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+  .stat-detail-item span:last-child {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 40px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+/* 일정표 캘린더 스타일 */
+.calendar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+  padding-left: 170px;
+  padding-top: 150px;
+  background: #f8f9fa;
+  min-width: 0;
+  flex: 1;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 16px;
+  padding: 21px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-right: 20px;
+}
+
+.calendar-header .welcome-section h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.calendar-header .welcome-section p {
+  margin: 0;
+  font-size: 16px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calendar-nav-btn {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6c757d;
+  transition: all 0.2s;
+}
+
+.calendar-nav-btn:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.current-month {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 120px;
+  text-align: center;
+}
+
+.calendar-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-right: 20px;
+}
+
+.calendar-grid {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.weekday {
+  padding: 16px 8px;
+  text-align: center;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+  min-height: 100px;
+  padding: 8px;
+  border-right: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+  background: white;
+  transition: background-color 0.2s;
+}
+
+.calendar-day:hover {
+  background: #f8f9fa;
+}
+
+.calendar-day.other-month {
+  background: #f8f9fa;
+  color: #adb5bd;
+}
+
+.day-number {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.calendar-day.other-month .day-number {
+  color: #adb5bd;
+}
+
+.event {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event.exam {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.event.holiday {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.event.event {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.event.meeting {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.calendar-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.calendar-section {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.upcoming-events,
+.next-month-events {
+  padding: 20px;
+}
+
+.event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s;
+}
+
+.event-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-item.exam {
+  border-left: 4px solid #ffc107;
+  background: #fffbf0;
+}
+
+.event-item.holiday {
+  border-left: 4px solid #17a2b8;
+  background: #f0f9ff;
+}
+
+.event-item.event {
+  border-left: 4px solid #28a745;
+  background: #f0fff4;
+}
+
+.event-item.meeting {
+  border-left: 4px solid #dc3545;
+  background: #fff5f5;
+}
+
+.event-icon {
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: white;
+  flex-shrink: 0;
+}
+
+.event-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.event-content p {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.event-status {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.event-item.exam .event-status {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.event-item.holiday .event-status,
+.event-item.event .event-status,
+.event-item.meeting .event-status {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .calendar-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .calendar-day {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-content {
+    padding: 16px;
+    padding-left: 20px;
+    padding-top: 60px;
+  }
+  
+  .calendar-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .calendar-day {
+    min-height: 60px;
+    padding: 4px;
+  }
+  
+  .event {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+} 
