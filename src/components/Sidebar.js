@@ -7,8 +7,8 @@ const MENU_LIST = [
   { label: '1학년', short: '1' },
   { label: '2학년', short: '2' },
   { label: '3학년', short: '3' },
-  { label: '일정표', short: '일' },
-  { label: '관리', short: '관' },
+  { label: '일정표', short: '📅', icon: '📅' },
+  { label: '관리', short: '⚙️', icon: '⚙️' },
 ];
 
 export const Sidebar = ({ 
@@ -31,7 +31,7 @@ export const Sidebar = ({
       onMouseLeave={onMouseLeave}
     >
       <div className="sidebar-header">
-        <div className="sidebar-logo">T</div>
+        <div className="sidebar-logo"></div>
       </div>
       <ul className="sidebar-menu">
         {MENU_LIST.map((item) => (
@@ -40,7 +40,14 @@ export const Sidebar = ({
             key={item.label}
             onClick={() => onMenuClick(item.label)}
           >
-            {sidebarHovered ? item.label : item.short}
+            {sidebarHovered ? (
+              <>
+                {item.icon && <span className="menu-icon">{item.icon}</span>}
+                {item.label}
+              </>
+            ) : (
+              item.short
+            )}
           </li>
         ))}
       </ul>

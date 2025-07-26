@@ -30,21 +30,22 @@
 }
 
 .sidebar-header {
-  padding: 16px 0;
+  padding: 8px 0;
   text-align: center;
   border-bottom: 1px solid #34495e;
-  height: 56px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .sidebar-logo {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  opacity: 0.7;
 }
 
 .sidebar-menu {
@@ -73,12 +74,30 @@
   text-overflow: ellipsis;
   position: relative;
   margin: 0;
+  gap: 8px;
 }
 
-/* 사이드바가 축소되었을 때도 왼쪽 정렬 유지 */
+.menu-icon {
+  font-size: 16px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+/* 축소 상태에서 메뉴 아이템 중앙 정렬 */
 .sidebar:not(:hover) .menu-item {
-  justify-content: flex-start;
-  padding-left: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* 사이드바가 축소되었을 때 중앙 정렬 */
+.sidebar:not(:hover) .menu-item {
+  justify-content: center;
+  padding-left: 0;
+}
+
+/* 축소 상태에서 이모티콘 표시 */
+.sidebar:not(:hover) .menu-icon {
+  display: inline;
 }
 
 .menu-item:hover {
